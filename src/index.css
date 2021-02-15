@@ -1,13 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #3a4f6c;
+  color: white;
+  font-family: 'Abel', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-body{
+  height: 100vh;
+}
+
+.spacer {
+  height: 20vh;
+}
+
+.spacer-reduced {
+  height: 2vh;
+  animation: reduceheightSpacer;
+  animation-duration: 2s;
+  animation-delay: 0s;
+}
+
+.title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 5em;
+  border-right: 2px solid white;
+  margin: 20px;
+  animation: typewriter 2s steps(13) 0.5s 1 normal both, 
+  blinkTextCursor 500ms infinite normal;
+  overflow: hidden;
+}
+
+.banner {
+  font-size: 0.7em;
+  margin: 0;
+  background-color: #ffffff;
+  color:#3a4f6c;
+  text-align: center;
+  height: 4vh;
+  min-height: 20px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  width: 40%;
+  max-width: 400px;
+  animation-name: phaseInBanner;
+  animation-duration: 4.5s;
+  animation-delay: 0s;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: #3a4f6c;
+  height: 50vh;
+  animation: phaseInText;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  width: 100px;
+  text-align: center;
+  margin: 20px;
+  padding-bottom: 5px;
+  animation-name: phaseInLinks;
+  animation-duration: 6s;
+  animation-delay: 0s;
+  color: #ffffff
+}
+
+.link:hover {
+  border-bottom: 1px solid white;
+}
+
+.link-current {
+  color: #80b0f3;
+  border-bottom: 1px solid #80b0f3;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ------------------ Animation Keyframes ------------------ */
+
+@keyframes typewriter {
+  from {width:0;}
+  to {width: 6em;}
+}
+
+@keyframes blinkTextCursor{
+  from{border-right-color: rgb(#ffffff);}
+  to{border-right-color: transparent;}
+}
+
+@keyframes reduceheightSpacer {
+  0% {height: 20vh;}
+  100% {height: 2vh;}
+}
+
+@keyframes phaseInBanner{
+  0%, 75% {background-color: #3a4f6c;}
+  100% {background-color: #ffffff;} 
+}
+
+@keyframes phaseInLinks{
+  0%, 75% {color: #3a4f6c; border-bottom-color: #3a4f6c;}
+  100% {color: #ffffff;border-bottom-color: #ffffff;} 
+}
+
+@keyframes phaseInText {
+  0%, 75% {background-color: #3a4f6c; color: #3a4f6c;}
+  100% {background-color: #ffffff;} 
+}
+
+
+/* ------------------ Media Tags ------------------ */
+
+@media only screen and (max-width: 750px), (max-height: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .banner {
+      width: 70%
+  }
+
+  .link {
+      width: 60px;
+      font-size: 0.7em;
+  }
+
+  .main-index {
+      height: 70vh;
+  }
+
+  @keyframes reduceHeight {
+      0%, 75% {height: 100vh;}
+      100% {height: 70vh;}
+  }
+
 }
