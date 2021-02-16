@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
+
 body {
-  margin: 0;
   background-color: #3a4f6c;
   color: white;
   font-family: 'Abel', sans-serif;
 }
 
 .main-body{
+  margin: 0 auto;
   height: 100vh;
+  max-width: 700px;
 }
 
 .spacer {
@@ -37,6 +39,8 @@ h1 {
   animation: typewriter 2s steps(13) 0.5s 1 normal both, 
   blinkTextCursor 500ms infinite normal;
   overflow: hidden;
+  width: 5em;
+  white-space: nowrap;
 }
 
 .banner {
@@ -64,16 +68,23 @@ h1 {
 .main-content {
   display: flex;
   justify-content: center;
-  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   color: #3a4f6c;
   height: 50vh;
   animation: phaseInText;
   animation-duration: 2s;
   animation-delay: 0s;
   width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: white;
+  overflow: scroll;
 }
 
 .links {
+  margin-top: -10px;
   display: flex;
 }
 
@@ -85,7 +96,8 @@ h1 {
   animation-name: phaseInLinks;
   animation-duration: 6s;
   animation-delay: 0s;
-  color: #ffffff
+  color: #ffffff;
+  border-bottom: 1px solid #3a4f6c;
 }
 
 .link:hover {
@@ -101,12 +113,22 @@ a {
   text-decoration: none;
 }
 
+img {
+  border-radius: 50%;
+  height: 200px;
+}
+
+.in-body-link {
+  color: #3a4f6c;
+  font-style: italic;
+}
+
 
 /* ------------------ Animation Keyframes ------------------ */
 
 @keyframes typewriter {
   from {width:0;}
-  to {width: 6em;}
+  to {width: 5em;}
 }
 
 @keyframes blinkTextCursor{
@@ -142,17 +164,30 @@ a {
     font-size: 2em;
   }
 
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.7em;
+  }
+
   .banner {
-      width: 70%
+      width: 70%;
+      font-size: 0.8em;
   }
 
   .link {
-      width: 60px;
-      font-size: 0.7em;
+      width: 80px;
+      font-size: 0.8em;
   }
 
   .main-index {
       height: 70vh;
+  }
+
+  .main-body {
+    max-width: 500px;
   }
 
   @keyframes reduceHeight {
